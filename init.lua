@@ -41,17 +41,8 @@ require 'nt-cpp-tools'.setup({
         TSCppImplWrite = {
             output_handle = require'nt-cpp-tools.output_handlers'.get_add_to_cpp()
         }
-        --[[
-        <your impl {
-            output_handle = function (str, context) 
-                -- string contains the class implementation
-                -- do whatever you want to do with it
-            end
-        }
-        ]]
     }
 })
--- cmdline completion
 local cmp = require("cmp")
 cmp.setup.cmdline(':', {
   mapping = cmp.mapping.preset.cmdline(),
