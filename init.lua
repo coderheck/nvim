@@ -58,4 +58,5 @@ lspconfig.clangd.setup({
 vim.diagnostic.config({ signs = false })
 vim.o.background = "dark"
 vim.cmd([[colorscheme vscode]])
+vim.cmd([[map q <Nop>]])
 -- vim.cmd([[Neotree show]])
