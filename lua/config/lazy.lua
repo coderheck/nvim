@@ -25,15 +25,15 @@ vim.g.maplocalleader = "\\"
 require("lazy").setup({
   spec = {
     -- import your plugins
-		{ "tpope/vim-sleuth" },
+	{ "tpope/vim-sleuth" },
     {
       "nvim-neo-tree/neo-tree.nvim",
       branch = "v3.x",
       dependencies = 
       {
-	"nvim-lua/plenary.nvim",
-	"nvim-tree/nvim-web-devicons",
-	"MunifTanjim/nui.nvim",
+		"nvim-lua/plenary.nvim",
+		"nvim-tree/nvim-web-devicons",
+		"MunifTanjim/nui.nvim",
       },
       lazy = false,
       ---@module "neo-tree"
@@ -44,17 +44,17 @@ require("lazy").setup({
       "nvim-treesitter/nvim-treesitter",
       build = ":TSUpdate",
       config = function()
-	local configs = require("nvim-treesitter.configs")
-	configs.setup({
-	  ensure_installed = "all",
-	  highlight = { enable = true },
-	  indent = { enable = true },
-	  autotag = { 
-	    enable = true,
-	    enable_close_on_slash = false 
-	  },
-	})
-      end,
+		local configs = require("nvim-treesitter.configs")
+		configs.setup({
+		  ensure_installed = "all",
+		  highlight = { enable = true },
+		  indent = { enable = true },
+		  autotag = { 
+			enable = true,
+			enable_close_on_slash = false 
+		  },
+		})
+	  end,
     },
     {
       "Badhi/nvim-treesitter-cpp-tools",
@@ -117,6 +117,9 @@ require("lazy").setup({
     {
       "neovim/nvim-lspconfig",
       dependencies = {"williamboman/mason.nvim", "williamboman/mason-lspconfig.nvim",}
+    },
+    {
+      "m4xshen/autoclose.nvim"
     },
   },
   install = { colorscheme = { "vscode" } },
