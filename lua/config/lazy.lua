@@ -121,6 +121,11 @@ require("lazy").setup({
     {
       "m4xshen/autoclose.nvim"
     },
+    {
+      "numToStr/Comment.nvim",
+      opts = {},
+      lazy = false
+    },
   },
   install = { colorscheme = { "vscode" } },
   checker = { enabled = true },
