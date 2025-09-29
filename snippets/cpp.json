@@ -1,0 +1,95 @@
+{
+	"cpp_EratosthenesPrimeSieve": {
+		"prefix": "EratosthenesPrimeSieve",
+		"body": [
+			"#define maxP 1000000"
+			"bool pr[maxP+5];",
+			"void prSieve(){",
+			"	for(int i=2;i<=maxP;i++){pr[i]=true;}",
+			"	pr[0]=pr[1]=false;",
+			"	for(int i=2;i*i<=maxP;i++){",
+			"		if(pr[i]){",
+			"			for(int j=i*i;j<=maxP;j+=i){pr[j]=false;}",
+			"		}",
+			"	}",
+			"}"
+		],
+		"description": "Eratosthenes' Prime Sieve"
+	},
+	"cat":{
+		"prefix": "cat",
+		"body":[
+			"std::cout<<\" /\\\\\\_/\\\\\\\\\"<<\"\\n\";",
+			"std::cout<<\"( o.o )\"<<\"\\n\";",
+			"std::cout<<\" > ^ <\"<<\"\\n\";"
+		],
+		"description": "prints a fucking cat"
+	},
+	"fastStart":{
+		"prefix": "fastStart",
+		"body": [
+			"#include<iostream>",
+			"#include<algorithm>",
+			"#include<string>",
+			"using namespace std;",
+			"#define ll long long",
+			"#define maxN 1000000",
+			"int main(){",
+			"	if(fopen(\"MODIFYME.inp\",\"r\")){",
+			"		freopen(\"MODIFYME.inp\",\"r\",stdin);",
+			"		freopen(\"MODIFYME.out\",\"w\",stdout);",
+			"	}",
+			"}"
+		],
+		"description": "so i dont have to do manual labor every time"
+	},
+	"fastStartNoFreopen":{
+		"prefix": "noFreFastStart",
+		"body": [
+			"#include<iostream>",
+			"#include<algorithm>",
+			"#include<string>",
+			"using namespace std;",
+			"#define ll long long",
+			"#define maxN 1000000",
+			"int main(){"
+			"	$0",
+			"}"
+		],
+		"description": "so i dont have to do manual labor every time"
+	},
+	"minimalFastStart":{
+		"prefix": "minimalFastStart",
+		"body": [
+			"#include<iostream>",
+			"using namespace std;",
+			"#define ll long long",
+			"#define maxN 10000000",
+			"$0",
+			"int main(){}"
+		]
+	},
+	"MinMaxFunctions":{
+		"prefix": "minMaxFuncts",
+		"body": [
+			"int max(int &a,int &b){return(a>b)?a:b;}",
+			"int min(int &a,int &b){return(a<b)?a:b;}"
+		]
+	},
+	"GCD_LCM_Helper_Functions":{
+		"prefix": "GCD_LCM_Helper_Functions",
+		"body": [
+			"int gcd(const int &a,const int &b){return(!b)?a:gcd(b,a%b);}",
+			"int lcm(const int &a,const int &b){return(a/gcd(a,b))*b;}"
+		]
+	},
+	"frfr":{
+		"prefix": "frfr",
+		"body": [
+			"if(fopen(\"FUCKYOU.inp\",\"r\")){",
+			"	freopen(\"FUCKYOU.inp\",\"r\",stdin);",
+    	"	freopen(\"FUCKYOU.out\",\"w\",stdout);"
+			"}"
+		]
+	}
+}
