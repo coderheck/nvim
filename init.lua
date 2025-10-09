@@ -3,7 +3,6 @@ vim.opt.relativenumber = true
 vim.opt.signcolumn = "number"
 vim.opt.expandtab = false
 vim.opt.colorcolumn = "70"
-vim.opt.softtabstop = 2
 vim.g.mapleader = ','
 vim.api.nvim_set_option("clipboard", "unnamedplus")
 vim.keymap.set('n', '<C-H>', 'db', { noremap = true })
