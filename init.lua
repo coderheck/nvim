@@ -1,7 +1,10 @@
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.signcolumn = "number"
-vim.opt.expandtab = false
+vim.opt.shiftwidth = 4
+vim.opt.tabstop = 4
+vim.opt.softtabstop = 4
+vim.opt.expandtab = false 
 vim.opt.colorcolumn = "70"
 vim.g.mapleader = ','
 vim.api.nvim_set_option("clipboard", "unnamedplus")
