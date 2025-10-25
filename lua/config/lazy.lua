@@ -30,7 +30,6 @@ require("lazy").setup(
     {
         spec = {
             -- import your plugins
-            {"tpope/vim-sleuth"},
             {"Mofiqul/vscode.nvim", priority = 1000, config = true, opts = ...},
             {
                 "nvim-neo-tree/neo-tree.nvim",
