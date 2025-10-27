@@ -51,6 +51,20 @@ require("config.lazy")
 --         }
 --     }
 -- })
+vim.lsp.config['clangd'] = {
+	cmd = {
+		"clangd",
+		"--background-index",
+		"--clang-tidy",
+		"--log=verbose",
+		"--query-driver=C:/msys64/ucrt64/bin/g++.exe",
+	},
+	init_options = {
+		fallbackFlags = { "-std=c++20" },
+	},
+	capabilities = require("cmp_nvim_lsp").default_capabilities(),
+}
+vim.lsp.enable('clangd')
 local cmp = require("cmp")
 cmp.setup.cmdline(':', {
     mapping = cmp.mapping.preset.cmdline(),
@@ -65,20 +79,6 @@ cmp.setup({
         { name = 'buffer' },
         { name = 'path' },
     },
-})
-local lspconfig = require("lspconfig")
-lspconfig.clangd.setup({
-    cmd = {
-        "clangd",
-        "--background-index",
-        "--clang-tidy",
-        "--log=verbose",
-        "--query-driver=C:/msys64/ucrt64/bin/g++.exe",
-    },
-    initOptions = {
-        fallbackFlags = { "-std=c++20" },
-    },
-    capabilities = require("cmp_nvim_lsp").default_capabilities(),
 })
 vim.diagnostic.config({ signs = false })
 vim.o.background = "dark"

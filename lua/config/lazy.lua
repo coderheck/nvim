@@ -163,3 +163,4 @@ require("lazy").setup(
         checker = {enabled = true, notify = false}
     }
 )
+
