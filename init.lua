@@ -80,6 +80,9 @@ cmp.setup({
         { name = 'path' },
     },
 })
+require('Comment').setup({
+	ignore = '^$',
+})
 vim.diagnostic.config({ signs = false })
 vim.o.background = "dark"
 vim.cmd([[colorscheme vscode]])
