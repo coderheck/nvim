@@ -45,45 +45,6 @@ require("lazy").setup(
                 opts = {}
             },
             {
-                "nvim-treesitter/nvim-treesitter",
-                build = ":TSUpdate",
-                config = function()
-                    local configs = require("nvim-treesitter.configs")
-                    configs.setup(
-                        {
-                            ensure_installed = "all",
-                            highlight = {enable = true},
-                            indent = {enable = true},
-                            autotag = {
-                                enable = true,
-                                enable_close_on_slash = false
-                            }
-                        }
-                    )
-                end
-            },
-            {
-                "Badhi/nvim-treesitter-cpp-tools",
-                dependencies = {"nvim-treesitter/nvim-treesitter"},
-                opts = function()
-                    local options = {
-                        preview = {
-                            quit = "q",
-                            accept = "<tab>"
-                        },
-                        header_extension = "h",
-                        source_extension = "cpp",
-                        custom_define_class_function_commands = {
-                            TSCppImplWrite = {
-                                output_handle = require("nt-cpp-tools.output_handlers").get_add_to_cpp()
-                            }
-                        }
-                    }
-                    return options
-                end,
-                config = true
-            },
-            {
                 "hrsh7th/nvim-cmp",
                 dependencies = {
                     "L3MON4D3/LuaSnip",
