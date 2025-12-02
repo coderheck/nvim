@@ -29,7 +29,46 @@ vim.g.maplocalleader = "\\"
 require("lazy").setup(
     {
         spec = {
-            -- import your plugins
+            -- import your plugins 
+			{
+                "nvim-treesitter/nvim-treesitter",
+                build = ":TSUpdate",
+                config = function()
+                    local configs = require("nvim-treesitter.configs")
+                    configs.setup(
+						{
+                            ensure_installed = {"c","cpp","lua","toml","html","css"},
+                            highlight = {enable = true},
+                            indent = {enable = true},
+                            autotag = {
+                                enable = true,
+                                enable_close_on_slash = false
+                            }
+                        }
+                    )
+                end
+            },
+			{
+                "Badhi/nvim-treesitter-cpp-tools",
+                dependencies = {"nvim-treesitter/nvim-treesitter"},
+                opts = function()
+                    local options = {
+                        preview = {
+                            quit = "q",
+                            accept = "<tab>"
+                        },
+                        header_extension = "h",
+                        source_extension = "cpp",
+                        custom_define_class_function_commands = {
+                            TSCppImplWrite = {
+                                output_handle = require("nt-cpp-tools.output_handlers").get_add_to_cpp()
+                            }
+                        }
+                    }
+                    return options
+                end,
+                config = true
+            },
             {"Mofiqul/vscode.nvim", priority = 1000, config = true, opts = ...},
             {
                 "nvim-neo-tree/neo-tree.nvim",
