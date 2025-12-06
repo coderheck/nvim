@@ -74,11 +74,21 @@ cmp.setup.cmdline(':', {
     },
 })
 cmp.setup({
-    sources = {
+	enabled = function()
+		local context = require("cmp.config.context")
+		if context.in_treesitter_capture("comment") or context.in_syntax_group("Comment") then
+			return false
+		end
+		return true
+	end,
+	sources = {
         { name = 'nvim_lsp' },
         { name = 'buffer' },
         { name = 'path' },
     },
+	window = {
+		documentation = cmp.config.enable
+	},
 })
 require('Comment').setup({
 	ignore = '^$',
