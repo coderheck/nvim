@@ -56,7 +56,6 @@ vim.lsp.config['clangd'] = {
 		"clangd",
 		"--background-index",
 		"--clang-tidy",
-		"--log=verbose",
 		"--query-driver=C:/msys64/ucrt64/bin/g++.exe",
 		"--function-arg-placeholders=false",
 	},
