@@ -58,6 +58,7 @@ vim.lsp.config['clangd'] = {
 		"--clang-tidy",
 		"--log=verbose",
 		"--query-driver=C:/msys64/ucrt64/bin/g++.exe",
+		"--function-arg-placeholders=false",
 	},
 	init_options = {
 		fallbackFlags = { "-std=c++20" },
