@@ -19,12 +19,12 @@ vim.keymap.set('n', '<M-Down>', ':m .+1<CR>==', { noremap = true, silent = true 
 vim.keymap.set('n', '<leader>e', '<cmd>lua vim.diagnostic.open_float()<CR>', { noremap = true, silent = true })
 vim.keymap.set('n', '<leader>r', function()
     vim.cmd("w")
-    local runFile = vim.fn.expand("%:t:r")
+    local runFile = vim.fn.expand("%:t")
     vim.cmd("term gpp " .. runFile)
 end, { noremap = true })
 vim.keymap.set('n', '.rs', function()
     vim.cmd("w")
-    local runFile = vim.fn.expand("%:t:r")
+    local runFile = vim.fn.expand("%:t")
     vim.cmd("term gppsound " .. runFile)
 end, { noremap = true })
 vim.keymap.set('n', '<C-_>', 'gcc', { remap = true })
@@ -38,19 +38,6 @@ vim.keymap.set('v', '<Tab>', '>gv', { noremap = true, silent = true })
 vim.keymap.set('v', '<S-Tab>', '<gv', { noremap = true, silent = true })
 vim.keymap.set('v', '<C-_>', 'gcgv',  { remap = true })
 require("config.lazy")
--- require 'nt-cpp-tools'.setup({
---     preview = {
---         quit = 'q', 
---         accept = '<tab>'
---     },
---     header_extension = 'h',
---     source_extension = 'cxx',
---     custom_define_class_function_commands = {
---         TSCppImplWrite = {
---             output_handle = require'nt-cpp-tools.output_handlers'.get_add_to_cpp()
---         }
---     }
--- })
 vim.lsp.config['clangd'] = {
 	cmd = {
 		"clangd",
@@ -59,9 +46,9 @@ vim.lsp.config['clangd'] = {
 		"--query-driver=C:/msys64/ucrt64/bin/g++.exe",
 		"--function-arg-placeholders=false",
 	},
-	init_options = {
-		fallbackFlags = { "-std=c++20" },
-	},
+	-- init_options = {
+	-- 	fallbackFlags = { "-std=c++20" },
+	-- },
 	capabilities = require("cmp_nvim_lsp").default_capabilities(),
 }
 vim.lsp.enable('clangd')
