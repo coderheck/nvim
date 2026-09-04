@@ -132,7 +132,7 @@ require("lazy").setup(
                         }
                     }
                 }
-            }
+            },
         },
         install = {colorscheme = {"vscode"}},
         checker = {enabled = true, notify = false}

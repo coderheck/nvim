@@ -1,3 +1,4 @@
+----- misc -----
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.signcolumn = "number"
@@ -8,6 +9,8 @@ vim.opt.expandtab = false
 vim.opt.colorcolumn = "70"
 vim.g.mapleader = ','
 vim.api.nvim_set_option("clipboard", "unnamedplus")
+
+----- keybindings -----
 vim.keymap.set('n', '<C-H>', 'db', { noremap = true })
 vim.keymap.set('n', '<C-De>', 'dw', { noremap = true })
 vim.keymap.set('n', '<C-a>', 'ggVG', { noremap = true })
@@ -37,6 +40,9 @@ vim.keymap.set('v', '<M-Down>', ":m '>+1<CR>gv=gv", { noremap = true, silent = t
 vim.keymap.set('v', '<Tab>', '>gv', { noremap = true, silent = true })
 vim.keymap.set('v', '<S-Tab>', '<gv', { noremap = true, silent = true })
 vim.keymap.set('v', '<C-_>', 'gcgv',  { remap = true })
+vim.keymap.set('n', '<Esc>', '<cmd>noh<CR>', { desc = 'Clear search highlight' })
+
+----- plugin configs -----
 require("config.lazy")
 vim.lsp.config['clangd'] = {
 	cmd = {
